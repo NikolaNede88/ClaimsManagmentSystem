@@ -1,4 +1,6 @@
-﻿namespace Claims.Auditing
+﻿using Claims.Models;
+
+namespace Claims.Auditing
 {
     public class Auditer
     {

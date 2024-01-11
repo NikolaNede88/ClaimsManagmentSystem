@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
-namespace Claims
+namespace Claims.Models
 {
     public class Claim
     {
+    #region Properties
+
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
-        
+
         [JsonProperty(PropertyName = "coverId")]
         public string CoverId { get; set; }
 
@@ -25,6 +26,10 @@ namespace Claims
 
     }
 
+    #endregion
+
+    #region Enums
+
     public enum ClaimType
     {
         Collision = 0,
@@ -32,4 +37,5 @@ namespace Claims
         BadWeather = 2,
         Fire = 3
     }
+    #endregion
 }
