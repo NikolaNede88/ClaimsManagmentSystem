@@ -24,6 +24,7 @@ public class CoversController : ControllerBase
     #endregion
 
     #region Constructor
+
     public CoversController(CosmosClient cosmosClient, AuditContext auditContext, ILogger<CoversController> logger, ICoversServiceInterface coversServiceInterface)
     {
         _logger = logger;
