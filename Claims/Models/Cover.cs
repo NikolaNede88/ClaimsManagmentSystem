@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace Claims.Models;
 
@@ -10,6 +11,7 @@ public class Cover
     public string Id { get; set; }
 
     [JsonProperty(PropertyName = "startDate")]
+   //in this version of C# date validation is not supported
     public DateOnly StartDate { get; set; }
 
     [JsonProperty(PropertyName = "endDate")]

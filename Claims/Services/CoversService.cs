@@ -35,6 +35,7 @@ namespace Claims.Services
 
         public async Task<Cover> CreateAsync(Cover cover)
         {
+
             cover.Id = Guid.NewGuid().ToString();
             cover.Premium = _premiumProvider.ComputePremium(cover.StartDate, cover.EndDate, cover.Type);
             await _container.CreateItemAsync(cover, new PartitionKey(cover.Id));

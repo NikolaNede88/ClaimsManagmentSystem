@@ -64,15 +64,27 @@ public class CoversController : ControllerBase
     [HttpPost]
     public async Task<ActionResult> CreateAsync(Cover cover)
     {
+        if (cover.StartDate < DateOnly.FromDateTime(DateTime.Now))
+        {
+            throw new ArgumentException("Date caanot be in past");
+
+        }
+        DateOnly duration = cover.StartDate.AddYears(1);
+
+        if(cover.EndDate < duration)
+        {
+            throw new ArgumentException("total insurance period cannot exceed 1 year");
+        }
+
         var result = await _coversServiceInterface.CreateAsync(cover);
-       
+
         return Ok(result);
     }
 
     [HttpDelete("{id}")]
     public async Task DeleteAsync(string id)
     {
-         await _coversServiceInterface.DeleteAsync(id);      
+        await _coversServiceInterface.DeleteAsync(id);
     }
 
     #endregion

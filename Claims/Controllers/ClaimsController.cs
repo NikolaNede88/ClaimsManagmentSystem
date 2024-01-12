@@ -40,9 +40,14 @@ namespace Claims.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateAsync(Claim claim)
         {
-            await _cosmosDbService.AddItemAsync(claim);
-            _auditer.AuditClaim(claim.Id, "POST");
-            return Ok(claim);
+            if (ModelState.IsValid)
+            {
+                await _cosmosDbService.AddItemAsync(claim);
+                _auditer.AuditClaim(claim.Id, "POST");
+                return Ok(claim);
+            }
+
+            throw new InvalidDataException();
         }
 
         [HttpDelete("{id}")]

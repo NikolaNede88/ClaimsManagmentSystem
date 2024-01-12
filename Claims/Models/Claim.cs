@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace Claims.Models
 {
@@ -13,6 +14,8 @@ namespace Claims.Models
         public string CoverId { get; set; }
 
         [JsonProperty(PropertyName = "created")]
+
+        [Range(typeof(DateTime), "1/1/2022", "1/3/2022",ErrorMessage = "Invalid Date")]
         public DateTime Created { get; set; }
 
         [JsonProperty(PropertyName = "name")]
@@ -22,6 +25,7 @@ namespace Claims.Models
         public ClaimType Type { get; set; }
 
         [JsonProperty(PropertyName = "damageCost")]
+        [Range(1, 100000, ErrorMessage = "Price must be between $1 and $100000")]
         public decimal DamageCost { get; set; }
 
     }
