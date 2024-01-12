@@ -4,12 +4,22 @@ namespace Claims.Auditing
 {
     public class Auditer : IAuditer
     {
+        #region Properties 
+
         private readonly AuditContext _auditContext;
+
+        #endregion
+
+        #region Constructor
 
         public Auditer(AuditContext auditContext)
         {
             _auditContext = auditContext;
         }
+
+        #endregion
+
+        #region Methods 
 
         public void AuditClaim(string id, string httpRequestType)
         {
@@ -36,5 +46,7 @@ namespace Claims.Auditing
             _auditContext.Add(coverAudit);
             _auditContext.SaveChanges();
         }
+
+        #endregion
     }
 }

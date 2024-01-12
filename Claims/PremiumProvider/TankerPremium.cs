@@ -2,6 +2,8 @@
 {
     public class TankerPremium : IPremiumProvider
     {
+        #region Methods 
+
         public decimal ComputePremium(int insuranceLength, decimal premiumPerDay)
         {
             decimal totalPremium = 0m;
@@ -14,5 +16,7 @@
 
             return totalPremium;
         }
+
+        #endregion
     }
 }

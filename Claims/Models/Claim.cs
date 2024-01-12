@@ -37,5 +37,6 @@ namespace Claims.Models
         BadWeather = 2,
         Fire = 3
     }
+
     #endregion
 }
