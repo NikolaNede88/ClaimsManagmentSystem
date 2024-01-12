@@ -4,7 +4,7 @@ using Microsoft.Azure.Cosmos;
 
 namespace Claims.Services
 {
-    public class CoversService : ICoversServiceInterface
+    public class CoversService : ICoversService
     {
 
         #region Properties

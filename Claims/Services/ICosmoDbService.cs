@@ -2,7 +2,7 @@
 
 namespace Claims.Services
 {
-    public interface ICosmoDbServiceInterface
+    public interface ICosmoDbService
     {
         #region Methods
 

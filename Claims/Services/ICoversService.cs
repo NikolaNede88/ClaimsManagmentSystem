@@ -3,7 +3,7 @@
 
 namespace Claims.Services
 {
-    public interface ICoversServiceInterface
+    public interface ICoversService
     {
         #region Methods
 

@@ -14,14 +14,14 @@ namespace Claims.Controllers
         #region Properties
 
         private readonly ILogger<ClaimsController> _logger;
-        private readonly ICosmoDbServiceInterface _cosmosDbService;
+        private readonly ICosmoDbService _cosmosDbService;
         private readonly IAuditer _auditer;
 
         #endregion
 
         #region Constructor
 
-        public ClaimsController(ILogger<ClaimsController> logger, ICosmoDbServiceInterface cosmosDbService, AuditContext auditContext)
+        public ClaimsController(ILogger<ClaimsController> logger, ICosmoDbService cosmosDbService, AuditContext auditContext)
         {
             _logger = logger;
             _cosmosDbService = cosmosDbService;

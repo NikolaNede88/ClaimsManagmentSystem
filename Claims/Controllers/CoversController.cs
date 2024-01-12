@@ -19,13 +19,13 @@ public class CoversController : ControllerBase
 
     private readonly Container _container;
 
-    private readonly ICoversServiceInterface _coversServiceInterface;
+    private readonly ICoversService _coversServiceInterface;
 
     #endregion
 
     #region Constructor
 
-    public CoversController(CosmosClient cosmosClient, AuditContext auditContext, ILogger<CoversController> logger, ICoversServiceInterface coversServiceInterface)
+    public CoversController(CosmosClient cosmosClient, AuditContext auditContext, ILogger<CoversController> logger, ICoversService coversServiceInterface)
     {
         _logger = logger;
         _auditer = new Auditer(auditContext);

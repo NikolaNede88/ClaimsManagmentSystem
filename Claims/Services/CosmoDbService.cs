@@ -8,7 +8,7 @@ using System.Web.Http.ModelBinding;
 
 namespace Claims.Services
 {
-    public class CosmoDbService : ICosmoDbServiceInterface
+    public class CosmoDbService : ICosmoDbService
     {
         #region Properties
 
