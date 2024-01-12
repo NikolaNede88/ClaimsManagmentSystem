@@ -1,6 +1,8 @@
 ﻿
 using Claims.Auditing;
 using Claims.Models;
+using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.Azure.Cosmos;
 using System.Web.Http.ModelBinding;
 
@@ -22,7 +24,7 @@ namespace Claims.Services
         {
             if (dbClient == null) throw new ArgumentNullException(nameof(dbClient));
             _container = dbClient.GetContainer(databaseName, containerName);
-           
+
         }
 
         #endregion
@@ -56,7 +58,7 @@ namespace Claims.Services
         }
 
         public Task AddItemAsync(Claim item)
-        {          
+        {
             return _container.CreateItemAsync(item, new PartitionKey(item.Id));
         }
 

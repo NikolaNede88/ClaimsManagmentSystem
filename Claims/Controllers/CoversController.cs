@@ -66,14 +66,14 @@ public class CoversController : ControllerBase
     {
         if (cover.StartDate < DateOnly.FromDateTime(DateTime.Now))
         {
-            throw new ArgumentException("Date caanot be in past");
+            return BadRequest("Date caanot be in past");
 
         }
         DateOnly duration = cover.StartDate.AddYears(1);
 
         if(cover.EndDate < duration)
         {
-            throw new ArgumentException("total insurance period cannot exceed 1 year");
+            return BadRequest("total insurance period cannot exceed 1 year");
         }
 
         var result = await _coversServiceInterface.CreateAsync(cover);

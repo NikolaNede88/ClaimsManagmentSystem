@@ -8,7 +8,7 @@ public class Cover
  #region Properties
 
     [JsonProperty(PropertyName = "id")]
-    public string Id { get; set; }
+    public required string Id { get; set; }
 
     [JsonProperty(PropertyName = "startDate")]
    //in this version of C# date validation is not supported

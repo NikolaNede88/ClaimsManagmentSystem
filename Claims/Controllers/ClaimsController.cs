@@ -3,6 +3,7 @@ using Claims.Models;
 using Claims.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Cosmos;
+using System.Net;
 
 namespace Claims.Controllers
 {
@@ -46,8 +47,8 @@ namespace Claims.Controllers
                 _auditer.AuditClaim(claim.Id, "POST");
                 return Ok(claim);
             }
-
-            throw new InvalidDataException();
+            
+            return BadRequest("Model is not valid");
         }
 
         [HttpDelete("{id}")]
