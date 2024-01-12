@@ -44,7 +44,7 @@ namespace Claims.Controllers
             if (ModelState.IsValid)
             {
                 await _cosmosDbService.AddItemAsync(claim);
-                _auditer.AuditClaim(claim.Id, "POST");
+                _auditer.AuditClaim(claim.Id ?? "Id cannot be null", "POST");
                 return Ok(claim);
             }
             

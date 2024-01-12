@@ -1,10 +1,8 @@
 ﻿
-using Claims.Auditing;
 using Claims.Models;
-using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.AspNetCore.Http.HttpResults;
+
 using Microsoft.Azure.Cosmos;
-using System.Web.Http.ModelBinding;
+
 
 namespace Claims.Services
 {
@@ -53,8 +51,9 @@ namespace Claims.Services
             }
             catch (CosmosException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
-                return null;
+                return new Claim();
             }
+
         }
 
         public Task AddItemAsync(Claim item)
