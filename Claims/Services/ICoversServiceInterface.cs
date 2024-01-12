@@ -13,9 +13,7 @@ namespace Claims.Services
 
         Task<Cover> CreateAsync(Cover cover);
 
-        Task DeleteAsync(string id);
-
-        decimal ComputePremium(DateOnly startDate, DateOnly endDate, CoverType coverType);
+        Task DeleteAsync(string id);     
 
         #endregion
     }

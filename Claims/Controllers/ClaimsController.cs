@@ -10,10 +10,15 @@ namespace Claims.Controllers
     [Route("[controller]")]
     public class ClaimsController : ControllerBase
     {
+        #region Properties
 
         private readonly ILogger<ClaimsController> _logger;
         private readonly ICosmoDbServiceInterface _cosmosDbService;
-        private readonly Auditer _auditer;
+        private readonly IAuditer _auditer;
+
+        #endregion
+
+        #region Constructor
 
         public ClaimsController(ILogger<ClaimsController> logger, ICosmoDbServiceInterface cosmosDbService, AuditContext auditContext)
         {
@@ -21,6 +26,10 @@ namespace Claims.Controllers
             _cosmosDbService = cosmosDbService;
             _auditer = new Auditer(auditContext);
         }
+
+        #endregion
+
+        #region Methods
 
         [HttpGet]
         public Task<IEnumerable<Claim>> GetAsync()
@@ -48,5 +57,7 @@ namespace Claims.Controllers
         {
             return _cosmosDbService.GetClaimAsync(id);
         }
+
+        #endregion
     }
 }

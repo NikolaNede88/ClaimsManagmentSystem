@@ -1,7 +1,9 @@
-﻿namespace Claims.PremiumProvider
+﻿using Claims.Models;
+
+namespace Claims.PremiumProvider
 {
     public interface IPremiumProvider
     {
-        public void foo();
+        decimal ComputePremium(int insuranceLength, decimal premiumPerDay);
     }
 }

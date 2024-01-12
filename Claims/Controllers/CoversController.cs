@@ -14,8 +14,11 @@ public class CoversController : ControllerBase
     #region Properties
 
     private readonly ILogger<CoversController> _logger;
+
     private readonly Auditer _auditer;
+
     private readonly Container _container;
+
     private readonly ICoversServiceInterface _coversServiceInterface;
 
     #endregion
@@ -32,13 +35,7 @@ public class CoversController : ControllerBase
 
     #endregion
 
-    #region Methods
-
-    [HttpPost]
-    public async Task<ActionResult> ComputePremiumAsync(DateOnly startDate, DateOnly endDate, CoverType coverType)
-    {
-        return Ok(_coversServiceInterface.ComputePremium(startDate, endDate, coverType));
-    }
+    #region Methods  
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Cover>>> GetAsync()
