@@ -20,12 +20,6 @@ namespace Claims.Tests
 
             //TODO: Apart from ensuring 200 OK being returned, what else can be asserted?
         }
-
-        //TODO MOQ Interfaces 
-        // GetAsync
-        //CreateAsync
-        //Test DB
-        // Create claim/cover etc
-
+   
     }
 }
