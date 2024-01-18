@@ -7,6 +7,10 @@ namespace Claims.Models
     {
     #region Properties
 
+        /// <summary>
+        /// warning rwsolve but will be added no warn attribute
+        /// </summary> 
+        /// 
         [JsonProperty(PropertyName = "id")]
         public string? Id { get; set; }
 
