@@ -1,12 +1,6 @@
 ﻿using Claims.Models;
 using Claims.Services;
-using Microsoft.AspNetCore.Authentication;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Claims.Tests

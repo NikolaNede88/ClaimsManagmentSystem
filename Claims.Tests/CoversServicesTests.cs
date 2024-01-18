@@ -1,9 +1,6 @@
-﻿using Claims.Auditing;
-using Claims.CosmoDb;
+﻿using Claims.CosmoDb;
 using Claims.Models;
 using Claims.PremiumProvider;
-using Claims.Services;
-using Microsoft.Azure.Cosmos;
 using Moq;
 using Xunit;
 
